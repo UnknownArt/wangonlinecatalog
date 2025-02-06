@@ -115,8 +115,13 @@
                                     <tr>
                                         <th class="align-middle" style="width: 10%">ID</th>
                                         <th class="align-middle" style="width: 30%">Username</th>
-                                        <th class="align-middle" style="width: 35%">Adres e-mail</th>
+                                        <th class="align-middle" style="width: 35%">Email Address</th>
                                         <th class="align-middle" style="width: 15%">Rodzaj konta</th>
+                                        <th 
+                                        <!--translate to english-->
+                                        Rodzaj konta
+                                        
+                                        
                                         <th class="align-middle" style="width: 5%">Edit</th>
                                         <th class="align-middle" style="width: 5%">Delete</th>
                                     </tr>

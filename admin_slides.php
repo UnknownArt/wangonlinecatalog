@@ -108,7 +108,8 @@
                             }
                         }
                         if(isset($_GET['up_err']) && $_GET['up_err'] == 0 && isset($_GET['size_err']) && $_GET['size_err'] == 0){
-                            echoAlert("success", "Success!", "Wszystkie slajdy zostały pomyślnie zaktalizowane!");
+                            echoAlert("success", "Success!", ""All slides have been successfully updated!");
+                            
                         }
                         if (isset($_GET['del_result'])) {
                             if ($_GET['del_result'] == true) {

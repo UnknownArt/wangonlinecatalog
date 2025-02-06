@@ -18,7 +18,9 @@
 
 
             <div class="modal-header">
-                <h4 class="modal-title">Edit kategorię</h4>
+                <h4 class="modal-title">Edit Category</h4>
+                <!--translate to english-->
+                <
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
 
