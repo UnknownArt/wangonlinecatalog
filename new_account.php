@@ -188,7 +188,7 @@ if(isset($_POST['btn-signup']))
 									</div>
 									<div class="form-check mb-3 mr-sm-2">
 										<label class="form-check-label">
-											<input class="form-check-input" type="checkbox" required> I accept the terms and conditions
+											<input class="form-check-input" type="checkbox" required> I accept the terms and conditions. (Wang Globalnet)
 										</label>
 									</div>
 									<div class="form-group">

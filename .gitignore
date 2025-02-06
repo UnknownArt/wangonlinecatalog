@@ -2,3 +2,4 @@ vendor/*
 .vscode/*
 products_img/*
 
+.DS_Store
