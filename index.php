@@ -159,9 +159,11 @@
                   <a href="products.php?cat_id=<?php echo $settings['category_2']; ?>">
                     <div class="card text-white bg-secondary category-card">
                       <h3 class="card-title category-card-title">
-                        <?php 
-                          echo categoryNameById($user, $settings['category_2']); 
+                      <?php 
+                          $categoryName = categoryNameById($user, $settings['category_2']);
+                          echo mb_strimwidth($categoryName, 0, 17, "...", "UTF-8"); 
                         ?>
+
                       </h3>
                     </div>
                   </a>
@@ -171,8 +173,9 @@
                   <a href="products.php?cat_id=<?php echo $settings['category_3']; ?>">
                     <div class="card text-white bg-info category-card">
                       <h3 class="card-title category-card-title">
-                        <?php 
-                          echo categoryNameById($user, $settings['category_3']); 
+                      <?php 
+                          $categoryName = categoryNameById($user, $settings['category_3']);
+                          echo mb_strimwidth($categoryName, 0, 17, "...", "UTF-8"); 
                         ?>
                       </h3>
                     </div>
@@ -183,8 +186,9 @@
                   <a href="products.php?cat_id=<?php echo $settings['category_4']; ?>">
                     <div class="card text-white bg-dark category-card">
                       <h3 class="card-title category-card-title">
-                        <?php 
-                          echo categoryNameById($user, $settings['category_4']); 
+                      <?php 
+                          $categoryName = categoryNameById($user, $settings['category_4']);
+                          echo mb_strimwidth($categoryName, 0, 17, "...", "UTF-8"); 
                         ?>
                       </h3>
                     </div>
