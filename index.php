@@ -146,9 +146,10 @@
                   <a href="products.php?cat_id=<?php echo $settings['category_1']; ?>">
                     <div class="card text-white bg-primary category-card">
                       <h3 class="card-title category-card-title">
-                        <?php 
-                        echo categoryNameById($user, $settings['category_1']); 
-                      ?>
+                      <?php 
+                          $categoryName = categoryNameById($user, $settings['category_1']);
+                          echo mb_strimwidth($categoryName, 0, 17, "...", "UTF-8"); 
+                        ?>
                       </h3>
                     </div>
                   </a>
