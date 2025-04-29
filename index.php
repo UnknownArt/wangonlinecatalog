@@ -1,27 +1,21 @@
 <?php
+  ob_start(); //
   session_start();
   require_once("user_class.php");
   require_once("functions/cat-name-by-id.php");
   require_once("functions/select-products.php");
-
   define("NAVIGATION", true);
   define("ADMIN_PANEL", true);
   define("MODAL", true);
-
   $user = new User();
-
   $cat_settings_file = "cfg/featured_categories_config.json";
   $settings = json_decode(file_get_contents($cat_settings_file), true);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-
   <title>Product Catalog</title>
-
   <meta name="description" content="Online Product Catalog" />
   <meta name="keywords" content="catalog proudcts, online" />
 
@@ -211,14 +205,12 @@
         </div>
       </footer>
     </div>
-
   </div>
-
   <?php
       if($user->isLoggedIn() && $_SESSION['user_type'] == 1){
         echo '<script src="js/admin-panel.js" type="text/javascript"></script>';
       }
-  ?>
+      ob_end_flush(); //
+?>
 </body>
-
 </html>

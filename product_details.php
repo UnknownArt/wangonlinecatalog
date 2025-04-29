@@ -121,8 +121,9 @@
                             <div class="col-sm-6">
                                 <div >
                                     <h1><?php echo $product_row['prod_name']; ?></h1>
-                                    <h2><?php echo $product_row['prod_price']; ?> </h2>
-                                    <p><?php echo $product_row['prod_desc']; ?></p>
+                                    <h2><?php echo $product_row['prod_desc']; ?> </h2>
+                                    <p><?php echo '# '. $product_row['prod_code']; ?></p>
+                                    <p><?php echo $product_row['prod_spec']; ?></p>
                                 </div>
                                 <button type="submit" id="addToClip" class="btn btn-info btn-lg" 
                                     <?php if(!$user->isLoggedIn()) echo "disabled

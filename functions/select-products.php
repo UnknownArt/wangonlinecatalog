@@ -144,7 +144,7 @@ function selectLatestProducts($conn){
 
 function selectProductDetails($conn, $prod_id){
     try {
-        $query = "SELECT prod_name, prod_desc, prod_img, prod_price, category_id, cat_name 
+        $query = "SELECT prod_name, prod_desc, prod_img, prod_price, category_id, cat_name, prod_upc_img, prod_spec,prod_code 
                     FROM products
                     INNER JOIN categories ON category_id = cat_id
                     WHERE prod_id = :id";

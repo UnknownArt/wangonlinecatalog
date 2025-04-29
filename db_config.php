@@ -1,9 +1,9 @@
 <?php
     class Database{
-        private $host = "localhost";
-        private $db_name = "wangonlinecatalog";
-        private $username = "root";
-        private $password = "";  
+        private $host = "162.240.219.174";
+        private $db_name = "wangfood_onlinecatalog";
+        private $username = "wangfood_onlinecatalog";
+        private $password = "Wang2025!~";  
         public $connection;
 
         public function dbConnect(){

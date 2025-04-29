@@ -85,9 +85,7 @@
                                        <tr>
                                             <th class="align-middle" style="width: 10%"></th>
                                             <th class="align-middle" style="width: 40%">Product Name</th>
-                                            <th class="align-middle" style="width: 15%">Price</th>
                                             <th class="align-middle" style="width: 15%">Quantity</th>
-                                            <th class="align-middle" style="width: 15%">Value</th>
                                             <th class="align-middle" style="width: 5%">Delete</th>
                                         </tr>
                                     </thead>
@@ -103,15 +101,11 @@
                                     ?>
                                         <tr>
                                             <td class="text-center align-middle">
-                                                <img class="img-fluid img-thumbnail" style="min-width: 60px"
+                                                <img class="img-fluid img-thumbnail" style="min-width: 60px" height="100px"
                                                     src="<?php echo $row['prod_img']; ?>">
                                             </td>
                                             <td class="align-middle">
                                                 <p><?php echo $row['prod_name']; ?></p>
-                                            </td>
-                                            <td class="text-center align-middle">
-                                                <p class="product-price"><?php echo $row['prod_price'] . " "; ?></p>
-
                                             </td>
                                             <td class="text-center align-middle">
                                                 <div class="input-group">
@@ -120,9 +114,6 @@
                                                     <input type="number" class="form-control"
                                                         value="<?php echo $row['quantity']; ?>" min="1">
                                                 </div>
-                                            </td>
-                                            <td class="text-center align-middle">
-                                                <span class="product-value"></span> 
                                             </td>
                                             <td class="text-center align-middle">
                                                 <?php  
@@ -145,7 +136,7 @@
                                     <tfoot style="background: #ededed;">
                                         <tr>
                                             <td colspan="6" class="text-center align-middle">
-                                                Total Value:
+                                                End of the list
                                                 <strong><span id="totalPrice"></span> </strong>
                                             </td>
                                         </tr>
@@ -155,9 +146,15 @@
                             </div>
                         
                         <div class="row">
+                            <a href="generate-pdf_html.php">
+                                <button type="submit" class="btn btn-info" style="padding: 0.8rem;">
+                                    <i class="far fa-file-pdf mr-1" style="font-size: 1.5rem;"></i> Get Your Catalog (HTML)
+                                </button>
+                            </a>
+                            &nbsp;&nbsp;
                             <a href="generate-pdf.php">
                                 <button type="submit" class="btn btn-info" style="padding: 0.8rem;">
-                                    <i class="far fa-file-pdf mr-1" style="font-size: 1.5rem;"></i> Get Your Catalog (PDF)
+                                    <i class="far fa-file-pdf mr-1" style="font-size: 1.5rem;"></i> Get Your Catalog (PDF) -- Under Construction
                                 </button>
                             </a>
                         </div>

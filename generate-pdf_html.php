@@ -99,7 +99,7 @@
 
         </style>
 
-        <h1><img src="http://localhost/wangonlinecatalog/img/logo.png" width="50px" height="50px"></h1>
+        <h1><img src="/img/logo.png" width="50px" height="50px"></h1>
         <h5>Wang Globalnet Catalog</h5>
 
         <div class="catalog-container">';
@@ -135,8 +135,5 @@
         }
     }
 
-    $dompdf->loadHtml($content);
-    $dompdf->setPaper('Letter', 'portrait');
-    $dompdf->render();
-    $dompdf->stream("WANG_Globalnet_Online_Catalog", array("Attachment"=>0));
-    ?>
+    echo $content;
+?>
