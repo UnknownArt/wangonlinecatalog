@@ -142,6 +142,78 @@ function selectLatestProducts($conn){
     }
 }
 
+
+function renderProducts($results, $highlight = '') {
+    $total = count($results);
+
+    if ($total === 0) {
+        echo "<div class='alert alert-warning text-center'>검색 결과가 없습니다.</div>";
+        return;
+    }
+
+    $rows = array_chunk($results, 4); // 4개씩 묶기
+
+    foreach ($rows as $group) {
+        echo "<div class='row justify-content-center mb-4'>";
+
+        foreach ($group as $row) {
+            $prod_id = $row['prod_id'];
+            $prod_name = htmlspecialchars($row['prod_name']);
+            $prod_desc = nl2br(htmlspecialchars($row['prod_desc']));
+            $prod_spec = htmlspecialchars($row['prod_spec']);
+            $prod_code = htmlspecialchars($row['prod_code']);
+            $prod_img = !empty($row['prod_img']) ? $row['prod_img'] : "products_img/noimage.png";
+            $prod_upc_img = !empty($row['prod_upc_img']) ? $row['prod_upc_img'] : "";
+
+            // 하이라이팅
+            if ($highlight !== '') {
+                $prod_name = preg_replace("/(" . preg_quote($highlight, '/') . ")/i", "<mark>$1</mark>", $prod_name);
+                $prod_desc = preg_replace("/(" . preg_quote($highlight, '/') . ")/i", "<mark>$1</mark>", $prod_desc);
+                $prod_spec = preg_replace("/(" . preg_quote($highlight, '/') . ")/i", "<mark>$1</mark>", $prod_spec);
+                $prod_code = preg_replace("/(" . preg_quote($highlight, '/') . ")/i", "<mark>$1</mark>", $prod_code);
+            }
+
+            // 👉 카드 너비 조건: 결과가 1개인 경우 넓게 표시
+            $cardClass = (count($group) === 1) ? 'col-md-8 col-sm-10' : 'col-xl-3 col-lg-4 col-md-6';
+
+            echo "
+            <div class='$cardClass mb-4'>
+                <a href='product_details.php?prod_id=$prod_id' style='text-decoration: none; color: inherit;'>
+                    <div class='border h-100 bg-white text-center shadow-sm p-2'>
+                        <div class='d-flex justify-content-between border-bottom pb-1 mb-1'>
+                            <span><strong>$prod_code</strong></span>
+                            <span><strong>$prod_name</strong></span>
+                        </div>
+                        <div class='mb-1'>
+                            <small class='text-muted'>$prod_desc</small>
+                        </div>
+                        <div class='mb-2'>
+                            <img src='$prod_img' alt='$prod_name' class='img-fluid' style='height: 150px; object-fit: contain;' 
+                                 onerror=\"this.src='products_img/noimage.png';\">
+                        </div>
+                        <div class='text-primary font-weight-bold mb-2'>
+                            $prod_spec
+                        </div>";
+
+            if (!empty($prod_upc_img)) {
+                echo "<div class='mb-2'>
+                        <img src='$prod_upc_img' alt='Barcode' style='height: 50px;' class='img-fluid'>
+                      </div>";
+            }
+
+            echo "
+                        <div class='bg-secondary text-white py-1'>
+                            $prod_name
+                        </div>
+                    </div>
+                </a>
+            </div>";
+        }
+
+        echo "</div>"; // row 닫기
+    }
+}
+
 function selectProductDetails($conn, $prod_id){
     try {
         $query = "SELECT prod_name, prod_desc, prod_img, prod_price, category_id, cat_name, prod_upc_img, prod_spec,prod_code 

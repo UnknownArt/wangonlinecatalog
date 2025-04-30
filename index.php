@@ -119,9 +119,23 @@
 
           <div class="container">
 
+          <!-- Search Form 시작 -->
+                <form method="GET" action="search.php" class="mb-4">
+                  <div class="form-row">
+                   <div class="col-md-2">
+                    </div>
+                    <div class="col-md-6">
+                      <input type="text" name="keyword" class="form-control" placeholder="상품명, 키워드, 브랜드">
+                    </div>
+                    <div class="col-md-2">
+                      <button type="submit" class="btn btn-primary btn-block">검색</button>
+                    </div>
+                  </div>
+                </form>
+                <!-- Search Form 끝 -->
             <section>
               <div class="section-header text-center">
-                <h1>Latest Products</h1>
+                <h1>New Product</h1>
               </div>
 
               <div class="row">
